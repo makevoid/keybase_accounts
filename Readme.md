@@ -34,20 +34,20 @@ display githubs
 actual code: <https://github.com/makevoid/keybase_accounts/blob/master/main.rb>
 
 ```ruby
-    arrays %w(results githubs)
+arrays %w(results githubs)
 
-    # for letter in ("a".."b") # faster & shorter
-    for letter in ("a".."z")
-      results << execute("keybase search #{letter}")
-    end
+# for letter in ("a".."b") # faster & shorter
+for letter in ("a".."z")
+  results << execute("keybase search #{letter}")
+end
 
-    for result in results
-      githubs << result.parse("github:(?<gh_user>.+?)\t")
-    end
+for result in results
+  githubs << result.parse("github:(?<gh_user>.+?)\t")
+end
 
-    githubs.uniq!
+githubs.uniq!
 
-    display githubs
+display githubs
 ```
 
 ----
