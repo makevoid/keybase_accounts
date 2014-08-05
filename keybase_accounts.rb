@@ -21,14 +21,20 @@ class KeybaseAccounts
   def arrays(names)
     KeybaseAccounts.create_accessors names
     for name in names
-      instance_variable_set "@#{name}", []
+      iv_set "@#{name}", []
     end
     # instance_variable_get "@#{name}"
   end
 
   def display(thing)
     string = thing
-    string = thing.join("\n\t") if thing.is_a? Array
+    if thing.is_a? Array
+      string = if thing.first.is_a? Hash
+        thing.map{ |h| h.map{ |k, v| "#{k}: #{v}" }.join("\t") }
+      else
+        thing
+      end.join "\n\t"
+    end
     puts
     puts "\t#{string}"
     puts
@@ -63,8 +69,13 @@ class KeybaseAccounts
 
   def json_get(url)
     puts "getting & parsing json url: #{url}"
-    resp = Net::HTTP.get_response URI.parse(url)
-    JSON.parse resp.body
+    body = begin
+      resp = Net::HTTP.get_response URI.parse(url)
+      resp.body
+    rescue URI::InvalidURIError
+      "{}"
+    end
+    JSON.parse body
   end
 
 
