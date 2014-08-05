@@ -5,10 +5,6 @@ class KeybaseAccounts
 
   # easy method definition [for array patch] - taken from github.com/makevoid/blizz
 
-  # def self.included(mod)
-  #   mod.send :extend, ClassMethods
-  # end
-
   module ClassMethods
     def create_accessors(accessors)
       attr_accessor *accessors
