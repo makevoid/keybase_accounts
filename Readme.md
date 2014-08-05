@@ -3,6 +3,8 @@
 Creates a list of VERY FEW github accounts registered on keybase
 
 
+sidenote: there's also btc branch: http://github.com/makevoid/keybase_accounts/tree/btc
+
 ### running:
 
     ruby keybase_accounts.rb
