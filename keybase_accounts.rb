@@ -38,6 +38,14 @@ class KeybaseAccounts
     puts
   end
 
+
+  def display_all(things)
+    # TODO: rewrite, accept hash like: github: :gh_user -> label (collection_name), key, value
+    for thing in things
+      display thing
+    end
+  end
+
   def execute(command)
     puts
     puts "executing #{command}"
@@ -46,6 +54,18 @@ class KeybaseAccounts
     puts
     output
   end
+
+  # utils
+
+  def log(object)
+    puts object.inspect
+  end
+
+  def inspect(object)
+    raise object.inspect
+  end
+
+  alias :debug :inspect
 
   # main
 
@@ -64,7 +84,7 @@ end
 
 module Parsing
   def parse(regex_string)
-    /#{regex_string}/
+    scan(/#{regex_string}/m)
   end
 end
 

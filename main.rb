@@ -7,13 +7,18 @@ module Main
       results << execute("keybase search #{letter}")
     end
 
+    # inspect results
     for result in results
-      githubs << result.parse("github:(?<gh_user>.+?)")
+      githubs << result.parse("github:(?<gh_user>.+?)\t")
     end
 
     githubs.uniq!
 
-    display githubs[:gh_user]
+     inspect githubs
+    # log githubs
+
+    display githubs.map{|g| g[:gh_user] }
+    # display_all githubs: :gh_user
   end
 end
 
