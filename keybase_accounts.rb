@@ -47,7 +47,6 @@ class KeybaseAccounts
     output
   end
 
-
   # main
 
   def initialize
@@ -63,6 +62,17 @@ class KeybaseAccounts
 end
 
 
+module Parsing
+  def parse(regex_string)
+    /#{regex_string}/
+  end
+end
+
+# TODO: add 2.0+ requirement and use Refinements
+class String
+  include Parsing
+  # future: refine with Parsing
+end
 #
 
 kb_acc = KeybaseAccounts.new

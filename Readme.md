@@ -2,6 +2,11 @@
 
 Creates a list of (almost) all github accounts registered on keybase
 
+
+### running:
+
+    ruby keybase_accounts.rb
+
 ---
 
 pseudo code:

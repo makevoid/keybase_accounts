@@ -8,12 +8,12 @@ module Main
     end
 
     for result in results
-      githubs << parse("github:(makevoid)")
+      githubs << result.parse("github:(?<gh_user>.+?)")
     end
 
     githubs.uniq!
 
-    display githubs
+    display githubs[:gh_user]
   end
 end
 
