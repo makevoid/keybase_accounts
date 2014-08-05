@@ -31,7 +31,9 @@ display githubs
 
 ----
 
-actual code: <https://github.com/makevoid/keybase_accounts/blob/master/main.rb>
+### actual code: 
+
+<https://github.com/makevoid/keybase_accounts/blob/master/main.rb>
 
 ```ruby
 arrays %w(results githubs)
