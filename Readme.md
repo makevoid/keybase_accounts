@@ -55,8 +55,7 @@ display githubs
 ### OUTPUT:
 
 
-List of all Keybase users github accounts:
-(total 257 accounts - fetch date 5 Ago, 2014)
+List of SOME Keybase users github accounts:
 
 
 - [ayn](http://github.com/ayn)
