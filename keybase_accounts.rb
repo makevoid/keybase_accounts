@@ -34,14 +34,6 @@ class KeybaseAccounts
     puts
   end
 
-
-  def display_all(things)
-    # TODO: rewrite, accept hash like: github: :gh_user -> label (collection_name), key, value
-    for thing in things
-      display thing
-    end
-  end
-
   def execute(command)
     puts
     puts "executing #{command}"
@@ -62,6 +54,19 @@ class KeybaseAccounts
   end
 
   alias :debug :inspect
+
+
+  # utils - json
+
+  require 'json'
+  require 'net/https'
+
+  def json_get(url)
+    puts "getting & parsing json url: #{url}"
+    resp = Net::HTTP.get_response URI.parse(url)
+    JSON.parse resp.body
+  end
+
 
   # main
 

@@ -1,62 +1,32 @@
 ### Keybase Accounts List
 
 Creates a list of (almost) all github accounts registered on keybase
-
+that have a BTC address
+_then generate a BTC transaction with bitcoind or other multiple transaction thing (not implemented)_
 
 ### running:
 
     ruby keybase_accounts.rb
 
----
-
-pseudo code (that generated the first implementation):
-
-
-```ruby
-for letter in a..z
-
-  results << execute "keybase search [letter]"
-
-
-
-for result in results
-
-  githubs << parse "github:(makevoid)"
-
-
-display githubs
-```
-
 
 
 ----
 
-actual code: <https://github.com/makevoid/keybase_accounts/blob/master/main.rb>
+actual code: <https://github.com/makevoid/keybase_accounts/blob/btc/main.rb>
 
-```ruby
-arrays %w(results githubs)
+to add:
 
-# for letter in ("a".."b") # faster & shorter
-for letter in ("a".."z")
-  results << execute("keybase search #{letter}")
-end
+result = json_get "https://keybase.io/_/api/1.0/user/lookup.json?github=#{username}"
+result["cryptocurrency_addresses"]["bitcoin"] # reduce
 
-for result in results
-  githubs << result.parse("github:(?<gh_user>.+?)\t")
-end
-
-githubs.uniq!
-
-display githubs
-```
 
 ----
 
 ### OUTPUT:
 
 
-List of all Keybase users github accounts:
-(total 257 accounts - fetch date 5 Ago, 2014)
+List of all Keybase users github accounts with a Bitcoin address:
+(total 257 accounts - fetch date 5 Aug, 2014)
 
 
 - [ayn](http://github.com/ayn)
