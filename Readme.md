@@ -1,6 +1,6 @@
 ### Keybase Accounts List
 
-Creates a list of (almost) all github accounts registered on keybase
+Creates a list of VERY FEW github accounts registered on keybase
 
 
 ### running:
