@@ -2,23 +2,18 @@ module Main
   def main
     arrays %w(results githubs)
 
-    for letter in ("a".."b")
-    # for letter in ("a".."z")
+    # for letter in ("a".."b") # faster & shorter
+    for letter in ("a".."z")
       results << execute("keybase search #{letter}")
     end
 
-    # inspect results
     for result in results
       githubs << result.parse("github:(?<gh_user>.+?)\t")
     end
 
     githubs.uniq!
 
-     inspect githubs
-    # log githubs
-
-    display githubs.map{|g| g[:gh_user] }
-    # display_all githubs: :gh_user
+    display githubs
   end
 end
 
