@@ -21,9 +21,9 @@ class KeybaseAccounts
   def arrays(names)
     KeybaseAccounts.create_accessors names
     for name in names
-      instance_variable_set "@#{name}", []
+      iv_set "@#{name}", []
     end
-    # instance_variable_get "@#{name}"
+    # iv_get "@#{name}"
   end
 
   def display(thing)
@@ -32,14 +32,6 @@ class KeybaseAccounts
     puts
     puts "\t#{string}"
     puts
-  end
-
-
-  def display_all(things)
-    # TODO: rewrite, accept hash like: github: :gh_user -> label (collection_name), key, value
-    for thing in things
-      display thing
-    end
   end
 
   def execute(command)
