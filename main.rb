@@ -3,107 +3,24 @@ module Main
     arrays %w(results githubs developer_addresses)
 
 
-    # used github.com/makevoid/twitter_search to get these names
+    # optional: used github.com/makevoid/twitter_search to get these names
     # TODO: consider making this project into a command line tool
     data = %w(scottsmith
 mattstratton
 allanmacgregor
 jacopo
-nput
-bschwartz
-adamhovorka
-sdbruder
-matthewjohnson
-bph
-cyprusglobe
-tom_m
-rtgibbons
-jelks
-ramsesmartinez
-thanodnl
-pauls
-thanodnl
-jmorais
-stephenmelrose
-mattronix
-shahbaz
-naominovik
-intellectronica
-patricknagle
-meatballhat
-erikr
-jmdodd
-johnburns87
-leandrosalvador
-tikotzky
-arnihermann
-jruys
-sw00
-ernest
-desmukh
-vpegado
-bip
-shagun
-kjellski
-shelf
-kuba
-mrgnrdrck
-dohzya
-kharv
-xxx
-nloadholtes
-gdbelvin
-williamshowalter
-irisli
-bettse
-christiansmith
-jokull
-waith
-maloi
-makevoid
-tufla
-corduroy
-onevcat
-segumarc
-joknopp
-mbm
-kjellski
-jtdroste
-duane
-mart
-davidmaiz
-davidmaiz
-antti
-magrath
-jep
-markhoward
-maartenk
-xero
-xnuk
-tosbourn
-sydverma
-neingeist
-corysvensson
-jbub
-rawkode
-bwigginton
-amscotti
-test_charlie
-billie
-dominikschwind
-test_8a0423
-test_bob
-test_9a30ea
-kokx
-test_bob
+...
 pschow
 jahsa
 meejah)
 
-
-    # for letter in ("a".."b") # faster & shorter
-    for letter in data
-      results << execute("keybase search #{letter}")
+  
+    # NOTE: you can use these three lines below to choose your query  
+  
+    # for query in ("a".."b") # testing
+    # for query in data       # give specific usernames 
+    for query in ("a".."z")   # search with letters
+      results << execute("keybase search #{query}")
     end
 
     # results << "github:makevoid\t"
